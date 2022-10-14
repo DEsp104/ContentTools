@@ -11,7 +11,7 @@ editRouter.post(
 );
 
 editRouter.get(
-  "edits",
+  "/edits",
   editControllers.getAllEdits
 )
 
