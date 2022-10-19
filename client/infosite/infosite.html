@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My page</title>
+    <link rel="stylesheet" type="text/css" href="../build/content-tools.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+      .author {
+        font-style: italic;
+        font-weight: bold; 
+        color: red;
+      }
+      </style>
+
+
+  </head>
+  <body>
+    <div data-editable data-name="content">
+      <blockquote>
+          Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.
+      </blockquote>
+      <pre>John F. Woods</pre>
+    </div>
+
+    <div data-editable data-name=heading>
+      <h1>Content</h1>
+    </div>
+    <div data-editable data-name="article-body">...</div>
+   
+
+    <script src="../build/content-tools.js"></script>
+    <!-- <script src="../build/editor.js"></script>  -->
+    <script>
+      var editor = ContentTools.EditorApp.get();
+      editor.init('[data-editable]', 'data-name')
+      
+        console.log(editor.getState());
+        // console.log(editor.domRegions());
+        // console.log(editor.start());
+        ContentTools.StylePalette.add(
+      [
+        // new ContentTools.Style('By-line', 'article__by-line', ['p']),
+        // new ContentTools.Style('Caption', 'article__caption', ['p']),
+        new ContentTools.Style('Example', 'example', ['pre']),
+        new ContentTools.Style('Example + Good', 'example--good', ['pre']),
+        new ContentTools.Style('Example + Bad', 'example--bad', ['pre']),
+        new ContentTools.Style('Author', 'author', ['pre']),
+        new ContentTools.Style("ExampleTwo", "exampleTwo", ['blockquote'])
+      ]);
+      // console.log(ContentTools.StylePalette.styles())
+      // let style = new ContentTools.Style("ExampleTwo", "exampleTwo", ['blockquote'])
+      // console.log(style)
+      // console.log(ContentTools.StylePalette.styles())
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <!-- <link rel="stylesheet" type="text/css" href="content-edit.min.css"> -->
+    </head>
+    <body>
+        <div id="my-region">
+          <p id="my-element">The quick brown fox <br />jumps over the <b>lazy dog</b>.</p>
+        </div>
+        <script src="../external/scripts/content-edit.js"></script>
+        <script>
+            // var element = document.getElementById('my-region');
+            // var region = new ContentEdit.Region(element);
+            
+            // var names = ContentEdit.TagNames.get();
+
+            var element = document.getElementById('my-element').textContent;
+            console.log(element)
+            console.log(ContentSelect.Range.prepareElement(element));
+
+           
+        </script>
+    </body>
+</html>
