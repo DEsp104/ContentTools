@@ -12,6 +12,7 @@ editRouter.post(
 
 editRouter.get(
   "/edits",
+  
   editControllers.getAllEdits
 )
 
