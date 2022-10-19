@@ -1,6 +1,6 @@
 const express = require("express");
 
-// const cors = require("cors");
+const cors = require("cors");
 
 const logger = require("morgan");
 
@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(logger("dev"));
 
-// app.use(cors());
+app.use(cors());
 
 app.get("/", (req, res) => res.send("API is running!"));
 

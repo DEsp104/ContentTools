@@ -1,9 +1,11 @@
 const Edit = require("../models/edits");
 
-const createEdit = async () => {
+const createEdit = async (req, res) => {
   const {
     editContent
   } = req.body;
+
+  console.log(req.body)
 
   try {
     const newEdit = new Edit({
@@ -19,8 +21,9 @@ const createEdit = async () => {
   }
 };
 
-const getAllEdits = async() => {
+const getAllEdits = async(req, res) => {
   try {
+    console.log(res);
     const edits = await Edit.find().sort({
       date: -1,
     })
