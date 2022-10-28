@@ -189,7 +189,7 @@
       // payload = new FormData();
 
       let getItem = localStorage.getItem("item");
-      console.log(getItem)
+      // console.log(getItem)
       
       if (getItem === null) {
         payload = new FormData();
@@ -207,6 +207,9 @@
 
       localStorage.setItem("item", JSON.stringify(payload));
 
+     
+
+
       // Send the update content to the server to be saved
       function onStateChange(ev) {
           // Check if the request is finished
@@ -223,13 +226,19 @@
       };
 
 
-      const url = 'http://localhost:5000/api/save-my-page'
+      // const url = 'https://content-tools-server.onrender.com/api/save-my-page'
   
-      xhr = new XMLHttpRequest();
-      xhr.addEventListener('readystatechange', onStateChange);
-      xhr.open('POST', url, true);
-      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xhr.send(`editContent=${JSON.stringify(payload)}`);
+      // xhr = new XMLHttpRequest();
+      // xhr.addEventListener('readystatechange', onStateChange);
+      // xhr.open('POST', url, true);
+      // xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      // xhr.send(`editContent=${JSON.stringify(payload)}`);
+
+      const a = document.createElement("a");
+      const file = new Blob([JSON.stringify(payload)], { type: "text/plain" });
+      a.href = URL.createObjectURL(file);
+      a.download = "yourfile.json";
+		  a.click();
   });
 
 
